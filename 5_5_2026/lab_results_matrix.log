@@ -1,0 +1,346 @@
+So sánh 25 prompts
+========================================
+
+--- USE CASE: SUM ---
+Input gốc: Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+
+[Type: FULL]
+Prompt:
+Role: Biên tập viên công nghệ cao cấp
+Instruction: Tóm tắt các điểm chính của đoạn tin tức sau thành các ý ngắn gọn.
+Context: Bản tin tổng hợp các sự kiện công nghệ nổi bật trong tuần dành cho giới chuyên môn.
+Constraint: Trả về DUY NHẤT định dạng JSON theo cấu trúc sau: {"key_points": ["point 1", "point 2"], "topic": "string"}
+Input: Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+Response:
+{
+  "key_points": [
+    "Tập đoàn công nghệ XYZ công bố mô hình ngôn ngữ lớn thế hệ mới.",
+    "Phiên bản mới giảm 50% chi phí vận hành và cải thiện khả năng suy luận logic cùng xử lý toán học phức tạp."
+  ],
+  "topic": "Công nghệ ngôn ngữ"
+}
+Is_JSON: True
+------------------------------
+[Type: RICC]
+Prompt:
+Role: Biên tập viên công nghệ cao cấp
+Instruction: Tóm tắt các điểm chính của đoạn tin tức sau thành các ý ngắn gọn.
+Context: Bản tin tổng hợp các sự kiện công nghệ nổi bật trong tuần dành cho giới chuyên môn.
+Input: Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+Response:
+- Tập đoàn công nghệ XYZ công bố mô hình ngôn ngữ lớn thế hệ mới.
+- Giảm 50% chi phí vận hành so với phiên bản trước.
+- Cải thiện khả năng suy luận logic và xử lý toán học phức tạp.
+Is_JSON: False
+------------------------------
+[Type: JSON]
+Prompt:
+Tóm tắt các điểm chính của đoạn tin tức sau thành các ý ngắn gọn. Trả về định dạng JSON chính xác theo schema này: {"key_points": ["point 1", "point 2"], "topic": "string"}
+
+Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+Response:
+```json
+{
+  "key_points": [
+    "Tập đoàn công nghệ XYZ công bố mô hình ngôn ngữ lớn thế hệ mới.",
+    "Phiên bản mới giảm 50% chi phí vận hành.",
+    "Cải thiện khả năng suy luận logic và xử lý toán học phức tạp."
+  ],
+  "topic": "Công nghệ"
+}
+```
+Is_JSON: True
+------------------------------
+[Type: SOFT]
+Prompt:
+Role: Biên tập viên công nghệ cao cấp
+Instruction: Tóm tắt các điểm chính của đoạn tin tức sau thành các ý ngắn gọn.
+Context: Bản tin tổng hợp các sự kiện công nghệ nổi bật trong tuần dành cho giới chuyên môn.
+Constraint: Có thể chọn hoặc không chọn định dạng kết quả dưới dạng JSON {"key_points": ["point 1", "point 2"], "topic": "string"}.
+Input: Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+Response:
+{"key_points": ["Tập đoàn công nghệ XYZ công bố mô hình ngôn ngữ lớn thế hệ mới", "Giảm 50% chi phí vận hành", "Cải thiện khả năng suy luận logic", "Nâng cao khả năng xử lý toán học phức tạp"], "topic": "Công nghệ ngôn ngữ lớn"}
+Is_JSON: True
+------------------------------
+[Type: NONE]
+Prompt:
+Tóm tắt các điểm chính của đoạn tin tức sau thành các ý ngắn gọn.
+Nội dung: Tập đoàn công nghệ XYZ vừa chính thức công bố mô hình ngôn ngữ lớn thế hệ mới. Phiên bản này giảm 50% chi phí vận hành nhưng lại cải thiện đáng kể khả năng suy luận logic và xử lý toán học phức tạp so với thế hệ tiền nhiệm.
+Response:
+- Tập đoàn công nghệ XYZ công bố mô hình ngôn ngữ lớn thế hệ mới.
+- Phiên bản mới giảm 50% chi phí vận hành.
+- Cải thiện khả năng suy luận logic và xử lý toán học phức tạp.
+Is_JSON: False
+------------------------------
+--- USE CASE: CLASS ---
+Input gốc: Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+
+[Type: FULL]
+Prompt:
+Role: Chuyên viên phân tích hệ thống chăm sóc khách hàng
+Instruction: Phân loại lỗi hệ thống dựa trên mô tả của người dùng.
+Context: Hệ thống phân loại tự động các phản hồi và khiếu nại của người dùng từ cửa hàng ứng dụng.
+Constraint: Trả về DUY NHẤT định dạng JSON theo cấu trúc sau: {"error_category": "Network|UI|Performance|Account", "severity_level": "High|Medium|Low"}
+Input: Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+Response:
+```json
+{"error_category": "UI", "severity_level": "High"}
+```
+Is_JSON: True
+------------------------------
+[Type: RICC]
+Prompt:
+Role: Chuyên viên phân tích hệ thống chăm sóc khách hàng
+Instruction: Phân loại lỗi hệ thống dựa trên mô tả của người dùng.
+Context: Hệ thống phân loại tự động các phản hồi và khiếu nại của người dùng từ cửa hàng ứng dụng.
+Input: Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+Response:
+Dựa trên mô tả của người dùng, lỗi hệ thống có thể được phân loại như sau:
+
+**Lỗi kỹ thuật (Technical Issue)**: Người dùng gặp phải sự cố khi mở phần giỏ hàng, dẫn đến việc ứng dụng bị văng ra ngoài màn hình chính. Đây có thể là do lỗi trong mã nguồn của phiên bản mới hoặc sự không tương thích với thiết bị của người dùng.
+Is_JSON: False
+------------------------------
+[Type: JSON]
+Prompt:
+Phân loại lỗi hệ thống dựa trên mô tả của người dùng. Trả về định dạng JSON chính xác theo schema này: {"error_category": "Network|UI|Performance|Account", "severity_level": "High|Medium|Low"}
+
+Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+Response:
+```json
+{
+  "error_category": "UI",
+  "severity_level": "High"
+}
+```
+Is_JSON: True
+------------------------------
+[Type: SOFT]
+Prompt:
+Role: Chuyên viên phân tích hệ thống chăm sóc khách hàng
+Instruction: Phân loại lỗi hệ thống dựa trên mô tả của người dùng.
+Context: Hệ thống phân loại tự động các phản hồi và khiếu nại của người dùng từ cửa hàng ứng dụng.
+Constraint: Có thể chọn hoặc không chọn định dạng kết quả dưới dạng JSON {"error_category": "Network|UI|Performance|Account", "severity_level": "High|Medium|Low"}.
+Input: Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+Response:
+{"error_category": "UI", "severity_level": "High"}
+Is_JSON: True
+------------------------------
+[Type: NONE]
+Prompt:
+Phân loại lỗi hệ thống dựa trên mô tả của người dùng.
+Nội dung: Từ lúc cập nhật phiên bản mới hôm qua, ứng dụng của tôi liên tục bị văng ra ngoài màn hình chính mỗi khi tôi cố gắng mở phần giỏ hàng để thanh toán.
+Response:
+Dựa trên mô tả của người dùng, lỗi hệ thống có thể được phân loại như sau:
+
+1. **Lỗi chức năng (Functional Error)**: Lỗi này xảy ra khi một chức năng cụ thể của ứng dụng không hoạt động như mong đợi. Trong trường hợp này, việc mở phần giỏ hàng để thanh toán không thành công và dẫn đến việc ứng dụng bị văng ra ngoài.
+
+2. **Lỗi tương thích (Compatibility Error)**: Có thể phiên bản mới của ứng dụng không tương thích với thiết bị hoặc hệ điều hành mà người dùng đang sử dụng. Điều này có thể dẫn đến việc ứng dụng gặp sự cố khi thực hiện một số thao tác nhất định.
+
+3. **Lỗi sau cập
+Is_JSON: False
+------------------------------
+--- USE CASE: EXT ---
+Input gốc: Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+
+[Type: FULL]
+Prompt:
+Role: Kỹ sư dữ liệu phần cứng
+Instruction: Trích xuất các thông số kỹ thuật phần cứng được nhắc đến.
+Context: Cơ sở dữ liệu tự động cập nhật thông số linh kiện từ các bài báo cáo đánh giá thiết bị.
+Constraint: Trả về DUY NHẤT định dạng JSON theo cấu trúc sau: {"component_name": "string", "clock_speed": "string", "power_draw": "string"}
+Input: Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+Response:
+```json
+{"component_name": "AMD Ryzen 9 7950X", "clock_speed": "5.7 GHz", "power_draw": "230W"}
+```
+Is_JSON: True
+------------------------------
+[Type: RICC]
+Prompt:
+Role: Kỹ sư dữ liệu phần cứng
+Instruction: Trích xuất các thông số kỹ thuật phần cứng được nhắc đến.
+Context: Cơ sở dữ liệu tự động cập nhật thông số linh kiện từ các bài báo cáo đánh giá thiết bị.
+Input: Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+Response:
+Các thông số kỹ thuật phần cứng được nhắc đến trong đoạn văn là:
+
+1. Bộ vi xử lý: AMD Ryzen 9 7950X
+2. Xung nhịp tối đa: 5.7 GHz
+3. Mức tiêu thụ điện năng tối đa: 230W
+Is_JSON: False
+------------------------------
+[Type: JSON]
+Prompt:
+Trích xuất các thông số kỹ thuật phần cứng được nhắc đến. Trả về định dạng JSON chính xác theo schema này: {"component_name": "string", "clock_speed": "string", "power_draw": "string"}
+
+Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+Response:
+```json
+{
+  "component_name": "AMD Ryzen 9 7950X",
+  "clock_speed": "5.7 GHz",
+  "power_draw": "230W"
+}
+```
+Is_JSON: True
+------------------------------
+[Type: SOFT]
+Prompt:
+Role: Kỹ sư dữ liệu phần cứng
+Instruction: Trích xuất các thông số kỹ thuật phần cứng được nhắc đến.
+Context: Cơ sở dữ liệu tự động cập nhật thông số linh kiện từ các bài báo cáo đánh giá thiết bị.
+Constraint: Có thể chọn hoặc không chọn định dạng kết quả dưới dạng JSON {"component_name": "string", "clock_speed": "string", "power_draw": "string"}.
+Input: Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+Response:
+```json
+{
+  "component_name": "AMD Ryzen 9 7950X",
+  "clock_speed": "5.7 GHz",
+  "power_draw": "230W"
+}
+```
+Is_JSON: True
+------------------------------
+[Type: NONE]
+Prompt:
+Trích xuất các thông số kỹ thuật phần cứng được nhắc đến.
+Nội dung: Trong bài kiểm tra hiệu năng, bộ vi xử lý AMD Ryzen 9 7950X đạt mức xung nhịp tối đa lên tới 5.7 GHz, tuy nhiên mức tiêu thụ điện năng cũng khá cao, chạm ngưỡng 230W khi hoạt động hết công suất.
+Response:
+Các thông số kỹ thuật phần cứng được nhắc đến trong nội dung là:
+
+1. Bộ vi xử lý: AMD Ryzen 9 7950X
+2. Xung nhịp tối đa: 5.7 GHz
+3. Mức tiêu thụ điện năng tối đa: 230W (khi hoạt động hết công suất)
+Is_JSON: False
+------------------------------
+--- USE CASE: TRANS ---
+Input gốc: Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+
+[Type: FULL]
+Prompt:
+Role: Chuyên gia bản địa hóa phần mềm
+Instruction: Dịch đoạn tài liệu kỹ thuật sau sang tiếng Việt.
+Context: Tài liệu hướng dẫn tối ưu hóa cơ sở dữ liệu phân tán cho các lập trình viên nội bộ.
+Constraint: Trả về DUY NHẤT định dạng JSON theo cấu trúc sau: {"original_text": "string", "translated_text": "string"}
+Input: Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+Response:
+{
+  "original_text": "Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.",
+  "translated_text": "Việc triển khai một lớp bộ nhớ đệm phân tán có thể giảm đáng kể các thao tác đọc cơ sở dữ liệu và cải thiện độ trễ tổng thể của kiến trúc vi dịch vụ của bạn."
+}
+Is_JSON: True
+------------------------------
+[Type: RICC]
+Prompt:
+Role: Chuyên gia bản địa hóa phần mềm
+Instruction: Dịch đoạn tài liệu kỹ thuật sau sang tiếng Việt.
+Context: Tài liệu hướng dẫn tối ưu hóa cơ sở dữ liệu phân tán cho các lập trình viên nội bộ.
+Input: Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+Response:
+Việc triển khai một lớp bộ nhớ đệm phân tán có thể giảm đáng kể các thao tác đọc cơ sở dữ liệu và cải thiện độ trễ tổng thể của kiến trúc vi dịch vụ của bạn.
+Is_JSON: False
+------------------------------
+[Type: JSON]
+Prompt:
+Dịch đoạn tài liệu kỹ thuật sau sang tiếng Việt. Trả về định dạng JSON chính xác theo schema này: {"original_text": "string", "translated_text": "string"}
+
+Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+Response:
+```json
+{
+  "original_text": "Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.",
+  "translated_text": "Việc triển khai một lớp bộ nhớ đệm phân tán có thể giảm đáng kể các thao tác đọc cơ sở dữ liệu và cải thiện độ trễ tổng thể của kiến trúc vi dịch vụ của bạn."
+}
+```
+Is_JSON: True
+------------------------------
+[Type: SOFT]
+Prompt:
+Role: Chuyên gia bản địa hóa phần mềm
+Instruction: Dịch đoạn tài liệu kỹ thuật sau sang tiếng Việt.
+Context: Tài liệu hướng dẫn tối ưu hóa cơ sở dữ liệu phân tán cho các lập trình viên nội bộ.
+Constraint: Có thể chọn hoặc không chọn định dạng kết quả dưới dạng JSON {"original_text": "string", "translated_text": "string"}.
+Input: Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+Response:
+```json
+{
+  "original_text": "Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.",
+  "translated_text": "Việc triển khai một lớp bộ nhớ đệm phân tán có thể giảm đáng kể các thao tác đọc cơ sở dữ liệu và cải thiện độ trễ tổng thể của kiến trúc vi dịch vụ của bạn."
+}
+```
+Is_JSON: True
+------------------------------
+[Type: NONE]
+Prompt:
+Dịch đoạn tài liệu kỹ thuật sau sang tiếng Việt.
+Nội dung: Implementing a distributed caching layer can significantly reduce database read operations and improve the overall latency of your microservices architecture.
+Response:
+Việc triển khai một lớp bộ nhớ đệm phân tán có thể giảm đáng kể các thao tác đọc từ cơ sở dữ liệu và cải thiện độ trễ tổng thể của kiến trúc vi dịch vụ của bạn.
+Is_JSON: False
+------------------------------
+--- USE CASE: GEN ---
+Input gốc: Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+
+[Type: FULL]
+Prompt:
+Role: Chuyên viên sáng tạo nội dung tiếp thị
+Instruction: Sáng tạo 2 câu slogan quảng cáo hấp dẫn cho sản phẩm.
+Context: Chiến dịch quảng cáo ra mắt các dòng sản phẩm phụ kiện công nghệ.
+Constraint: Trả về DUY NHẤT định dạng JSON theo cấu trúc sau: {"slogans": ["slogan 1", "slogan 2"]}
+Input: Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+Response:
+```json
+{"slogans": ["Gõ phím nhẹ nhàng, làm việc hiệu quả - Alice Pro, bạn đồng hành công thái học!", "Giảm đau, tăng năng suất - Khám phá bàn phím Alice Pro ngay hôm nay!"]}
+```
+Is_JSON: True
+------------------------------
+[Type: RICC]
+Prompt:
+Role: Chuyên viên sáng tạo nội dung tiếp thị
+Instruction: Sáng tạo 2 câu slogan quảng cáo hấp dẫn cho sản phẩm.
+Context: Chiến dịch quảng cáo ra mắt các dòng sản phẩm phụ kiện công nghệ.
+Input: Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+Response:
+1. "Giảm đau, tăng năng suất - Bàn phím Alice Pro, đồng hành cùng bạn trong từng nhịp gõ!"
+2. "Chạm đến sự thoải mái - Alice Pro, bàn phím công thái học cho những ý tưởng bay bổng!"
+Is_JSON: False
+------------------------------
+[Type: JSON]
+Prompt:
+Sáng tạo 2 câu slogan quảng cáo hấp dẫn cho sản phẩm. Trả về định dạng JSON chính xác theo schema này: {"slogans": ["slogan 1", "slogan 2"]}
+
+Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+Response:
+```json
+{"slogans": ["Giảm đau, tăng năng suất - Bàn phím cơ Alice Pro, bạn đồng hành lý tưởng cho công việc!", "Chạm đến sự thoải mái - Alice Pro, bàn phím công thái học cho môi trường văn phòng chuyên nghiệp!"]}
+```
+Is_JSON: True
+------------------------------
+[Type: SOFT]
+Prompt:
+Role: Chuyên viên sáng tạo nội dung tiếp thị
+Instruction: Sáng tạo 2 câu slogan quảng cáo hấp dẫn cho sản phẩm.
+Context: Chiến dịch quảng cáo ra mắt các dòng sản phẩm phụ kiện công nghệ.
+Constraint: Có thể chọn hoặc không chọn định dạng kết quả dưới dạng JSON {"slogans": ["slogan 1", "slogan 2"]}.
+Input: Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+Response:
+```json
+{
+  "slogans": [
+    "Giảm đau, tăng năng suất - Bàn phím Alice Pro, đồng hành cùng bạn trong từng cú gõ!",
+    "Chạm đến sự thoải mái - Alice Pro, bàn phím công thái học cho những ý tưởng bay bổng!"
+  ]
+}
+```
+Is_JSON: True
+------------------------------
+[Type: NONE]
+Prompt:
+Sáng tạo 2 câu slogan quảng cáo hấp dẫn cho sản phẩm.
+Nội dung: Bàn phím cơ công thái học Alice Pro, thiết kế chia đôi giúp giảm đau mỏi cổ tay, sử dụng switch tĩnh âm phù hợp cho môi trường văn phòng chuyên nghiệp.
+Response:
+1. "Alice Pro - Bàn phím công thái học, nâng niu đôi tay bạn, giảm đau mỏi, tăng hiệu suất làm việc!"
+  
+2. "Chạm đến sự thoải mái với Alice Pro - Bàn phím chia đôi, tĩnh âm hoàn hảo cho không gian văn phòng chuyên nghiệp!"
+Is_JSON: False
+------------------------------
