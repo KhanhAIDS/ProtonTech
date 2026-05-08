@@ -1,0 +1,7 @@
+Subject: URGENT: Server Outage in Production
+From: Alex (IT Lead)
+Hi team,
+We are currently experiencing a severe server outage affecting our main payment gateway. Customers are unable to checkout. 
+David, I need you to check the database logs immediately. 
+Sarah, please draft an apology email to send to affected customers once we know the ETA. 
+We need this resolved in the next hour!
