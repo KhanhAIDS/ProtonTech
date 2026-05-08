@@ -74,7 +74,6 @@ The script will return a formatted JSON object:
 ├── data/                                 # Folder containing sample email text files
 ├── mini_prj_1_AI_email_summarizer.py     # Main application script
 ├── requirements.txt                      # Project dependencies
-├── .env.example                          # Template for environment variables
 └── README.md                             # Project documentation
 
 ```
